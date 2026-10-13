@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" width="560" height="440">
+  <rect width="560" height="440" rx="18" fill="#f7fafd"/>
+  <g font-family="Microsoft YaHei, Arial, sans-serif" fill="#16324f" text-anchor="middle">
+    <text x="330" y="44" font-size="22" font-weight="bold">混淆矩阵</text>
+
+    <text x="270" y="92" font-size="18">预测阳性</text>
+    <text x="430" y="92" font-size="18">预测阴性</text>
+
+    <text x="112" y="176" font-size="18" text-anchor="end">实际患病</text>
+    <text x="112" y="296" font-size="18" text-anchor="end">实际未患病</text>
+
+    <rect x="150" y="112" width="160" height="120" rx="10" fill="#e2f4e9" stroke="#2e9e5b" stroke-width="2"/>
+    <text x="230" y="166" font-size="24" font-weight="bold" fill="#2e9e5b">TP</text>
+    <text x="230" y="198" font-size="16">真阳性</text>
+
+    <rect x="310" y="112" width="160" height="120" rx="10" fill="#fdeaea" stroke="#c44545" stroke-width="2"/>
+    <text x="390" y="166" font-size="24" font-weight="bold" fill="#c44545">FP</text>
+    <text x="390" y="198" font-size="16">假阳性（误诊）</text>
+
+    <rect x="150" y="232" width="160" height="120" rx="10" fill="#fdeaea" stroke="#c44545" stroke-width="2"/>
+    <text x="230" y="286" font-size="24" font-weight="bold" fill="#c44545">FN</text>
+    <text x="230" y="318" font-size="16">假阴性（漏诊）</text>
+
+    <rect x="310" y="232" width="160" height="120" rx="10" fill="#e2f4e9" stroke="#2e9e5b" stroke-width="2"/>
+    <text x="390" y="286" font-size="24" font-weight="bold" fill="#2e9e5b">TN</text>
+    <text x="390" y="318" font-size="16">真阴性</text>
+
+    <text x="280" y="400" font-size="17" fill="#6b7f92">敏感度 = TP /（TP + FN）　特异度 = TN /（TN + FP）</text>
+  </g>
+</svg>

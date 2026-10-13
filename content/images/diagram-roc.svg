@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 460" width="560" height="460">
+  <rect width="560" height="460" rx="18" fill="#f7fafd"/>
+  <g font-family="Microsoft YaHei, Arial, sans-serif" fill="#16324f">
+    <text x="280" y="42" font-size="22" font-weight="bold" text-anchor="middle">ROC 曲线与 AUC</text>
+
+    <!-- 坐标轴 -->
+    <line x1="90" y1="380" x2="500" y2="380" stroke="#16324f" stroke-width="2.5"/>
+    <line x1="90" y1="380" x2="90" y2="80" stroke="#16324f" stroke-width="2.5"/>
+    <text x="500" y="412" font-size="16" text-anchor="end">1 − 特异度</text>
+    <text x="66" y="86" font-size="16" text-anchor="start">敏感度</text>
+    <text x="96" y="76" font-size="14" fill="#6b7f92">1.0</text>
+    <text x="52" y="386" font-size="14" fill="#6b7f92">0</text>
+
+    <!-- AUC 阴影 -->
+    <path d="M90 380 L110 240 C170 140 260 100 500 90 L500 380 Z" fill="#e0b968" opacity="0.28"/>
+
+    <!-- 随机线 -->
+    <line x1="90" y1="380" x2="500" y2="90" stroke="#8a9aa8" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="470" y="140" font-size="14" fill="#8a9aa8" text-anchor="end">随机猜测</text>
+
+    <!-- ROC 曲线 -->
+    <path d="M90 380 L110 240 C170 140 260 100 500 90" stroke="#2f6690" stroke-width="4" fill="none"/>
+    <text x="360" y="150" font-size="18" fill="#2f6690" font-weight="bold">AUC ↑ 区分能力越强</text>
+    <text x="280" y="436" font-size="16" fill="#6b7f92" text-anchor="middle">AUC = 0.5 无区分能力，AUC = 1 完美区分</text>
+  </g>
+</svg>

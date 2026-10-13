@@ -50,6 +50,7 @@
           "name": "训练集、验证集、测试集与过拟合",
           "exp": 6,
           "concept": "训练集用于拟合参数，验证集用于调参和选模型，测试集用于最终评估泛化；过拟合指模型在训练集表现好但在新数据上表现差。",
+          "conceptFigure": "content/images/diagram-pipeline.svg",
           "sections": [
             { "heading": "数据集划分", "points": ["训练集：学习模型参数", "验证集：调整超参数、选择模型", "测试集：只用于最终评估，不能反复调参"] },
             { "heading": "过拟合", "points": ["表现：训练集指标很高，验证/测试集明显变差", "原因：模型过于复杂、数据太少、噪声被记住", "对策：正则化、早停、增加数据、交叉验证"] }
@@ -213,6 +214,7 @@
           "name": "混淆矩阵、敏感度与特异度",
           "exp": 7,
           "concept": "混淆矩阵用 TP、FP、FN、TN 描述分类结果；敏感度反映识别真正患者的能力，特异度反映排除非患者的能力。",
+          "conceptFigure": "content/images/diagram-confusion.svg",
           "sections": [
             { "heading": "混淆矩阵", "points": ["TP：真阳性，患病且判为阳性", "FN：假阴性，患病但判为阴性（漏诊）", "FP：假阳性，未患病但判为阳性（误诊）", "TN：真阴性"] },
             { "heading": "指标", "points": ["敏感度 = TP / (TP + FN)，越低漏诊越多", "特异度 = TN / (TN + FP)，越低误诊越多"] }
@@ -235,6 +237,7 @@
           "name": "ROC 曲线与 AUC",
           "exp": 6,
           "concept": "ROC 曲线刻画不同阈值下敏感度与假阳性率的关系；AUC 是曲线下面积，0.5 表示无区分能力，1 表示完美区分。",
+          "conceptFigure": "content/images/diagram-roc.svg",
           "sections": [
             { "heading": "定义", "body": "ROC 曲线以假阳性率（1−特异度）为横轴、敏感度为纵轴，展示阈值变化下的取舍；AUC 越大，模型的整体区分能力越强。" },
             { "heading": "使用注意", "points": ["AUC=0.5：与随机猜测相当", "类别极不平衡时，PR 曲线/AUPRC 往往更有参考价值", "要结合临床场景选择阈值"] }
@@ -303,6 +306,7 @@
           "name": "隐私保护与联邦学习",
           "exp": 7,
           "concept": "医学 AI 必须保护患者隐私；联邦学习让数据留在本地，只聚合模型参数，降低数据集中带来的风险，但不等于绝对安全。",
+          "conceptFigure": "content/images/diagram-federated.svg",
           "sections": [
             { "heading": "隐私保护手段", "points": ["去标识化与最小必要原则", "加密与访问控制", "差分隐私", "联邦学习"] },
             { "heading": "联邦学习", "body": "各参与方在本地用各自数据训练，只上传模型参数或梯度，由中心聚合更新全局模型，原始数据不出本地。" },

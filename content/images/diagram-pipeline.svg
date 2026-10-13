@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300">
+  <rect width="820" height="300" rx="18" fill="#f7fafd"/>
+  <g font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" fill="#16324f" text-anchor="middle">
+    <g>
+      <rect x="28" y="110" width="132" height="72" rx="14" fill="#ffffff" stroke="#2f6690" stroke-width="2"/>
+      <text x="94" y="142">数据收集</text><text x="94" y="168">与清洗</text>
+    </g>
+    <g>
+      <rect x="188" y="110" width="132" height="72" rx="14" fill="#ffffff" stroke="#2f6690" stroke-width="2"/>
+      <text x="254" y="142">模型训练</text>
+    </g>
+    <g>
+      <rect x="348" y="110" width="132" height="72" rx="14" fill="#ffffff" stroke="#2f6690" stroke-width="2"/>
+      <text x="414" y="142">验证与</text><text x="414" y="168">调参</text>
+    </g>
+    <g>
+      <rect x="508" y="110" width="132" height="72" rx="14" fill="#eaf2f9" stroke="#2f6690" stroke-width="2"/>
+      <text x="574" y="142">临床部署</text>
+    </g>
+    <g>
+      <rect x="668" y="110" width="124" height="72" rx="14" fill="#fff7e6" stroke="#d9a441" stroke-width="2"/>
+      <text x="730" y="142">监测与</text><text x="730" y="168">更新</text>
+    </g>
+  </g>
+  <g stroke="#2f6690" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L8,3 L0,6 z" fill="#2f6690"/>
+      </marker>
+    </defs>
+    <path d="M162 146 H186"/>
+    <path d="M322 146 H346"/>
+    <path d="M482 146 H506"/>
+    <path d="M642 146 H666"/>
+  </g>
+  <path d="M730 184 C730 250 94 250 94 186" stroke="#d9a441" stroke-width="3" stroke-dasharray="8 6" fill="none" marker-end="url(#arrow-gold)"/>
+  <defs>
+    <marker id="arrow-gold" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#d9a441"/>
+    </marker>
+  </defs>
+  <text x="410" y="262" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#d9a441" text-anchor="middle">持续迭代：用真实世界数据反馈与更新模型</text>
+</svg>
