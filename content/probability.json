@@ -1,0 +1,68 @@
+{
+  "title": "概率统计·试水",
+  "chapters": [
+    {
+      "title": "概率论基础",
+      "skills": [
+        {
+          "name": "样本空间与事件",
+          "exp": 5,
+          "concept": "随机试验所有可能结果组成的集合叫样本空间 Ω；其中某个我们关心的事件 A 是 Ω 的子集。图中矩形 Ω 与其中的椭圆 A 表示这种包含关系：A 发生当且仅当试验结果落在 A 内。",
+          "conceptFigure": "content/images/probability-geometry-1.jpg",
+          "question": "若某随机试验的样本空间为 Ω，事件 A 是 Ω 的子集，则“事件 A 发生”意味着？",
+          "answer": "试验结果落在 A 中",
+          "answerSchema": [
+            { "type": "label", "text": "“事件 A 发生”意味着：" },
+            {
+              "type": "choice",
+              "id": "event_a",
+              "options": [
+                "试验结果落在 A 中",
+                "试验结果落在 Ω 之外",
+                "A 包含了整个 Ω",
+                "A 与 Ω 没有任何公共部分"
+              ],
+              "expected": "试验结果落在 A 中"
+            }
+          ],
+          "reviewQuestion": "图中的矩形 Ω 与椭圆 A 的关系说明的是？",
+          "reviewAnswer": "事件 A 是样本空间 Ω 的子集",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "该关系说明：" },
+            {
+              "type": "choice",
+              "id": "subset_rel",
+              "options": [
+                "事件 A 是样本空间 Ω 的子集",
+                "Ω 是 A 的子集",
+                "A 与 Ω 互斥",
+                "A 与 Ω 相互独立"
+              ],
+              "expected": "事件 A 是样本空间 Ω 的子集"
+            }
+          ]
+        },
+        {
+          "name": "条件概率 P(A|B)",
+          "exp": 6,
+          "concept": "条件概率 P(A|B)=P(A∩B)/P(B) 表示在事件 B 已发生的条件下事件 A 发生的概率。图中阴影表示 A∩B，分母是 B 而不是整个样本空间 Ω——这就是“条件”改变样本空间的含义。",
+          "conceptFigure": "content/images/prob-cond-01.jpg",
+          "question": "已知 P(A∩B)=0.3、P(B)=0.5，求 P(A|B)。",
+          "answer": "P(A|B)=0.6",
+          "answerSchema": [
+            { "type": "label", "text": "P(A|B) = " },
+            { "type": "number", "id": "cond_prob", "expected": 0.6 },
+            { "type": "label", "text": "" }
+          ],
+          "reviewQuestion": "已知 P(A|B)=0.6、P(B)=0.5，求 P(A∩B)。",
+          "reviewAnswer": "P(A∩B)=0.3",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "P(A∩B) = " },
+            { "type": "number", "id": "intersection", "expected": 0.3 },
+            { "type": "label", "text": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}

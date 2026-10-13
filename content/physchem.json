@@ -1,0 +1,231 @@
+{
+  "title": "物理化学（上册·天津大学第七版）",
+  "chapters": [
+    {
+      "title": "第一章 气体的 pVT 关系",
+      "skills": [
+        {
+          "name": "理想气体状态方程 pV=nRT",
+          "exp": 8,
+          "concept": "理想气体状态方程 pV=nRT 联系压力、体积、物质的量与热力学温度。它适用于高温低压的近似条件，计算时注意单位一致（SI 制中 p 用 Pa、V 用 m³、R=8.314 J·mol⁻¹·K⁻¹）。",
+          "question": "2 mol 理想气体在 T=300 K、体积 V=0.050 m³ 时，求压力 p（kPa，取 R=8.314 J·mol⁻¹·K⁻¹）。",
+          "answer": "p≈99.8 kPa",
+          "answerSchema": [
+            { "type": "label", "text": "p ≈ " },
+            { "type": "number", "id": "pressure", "expected": 99.8 },
+            { "type": "label", "text": " kPa" }
+          ],
+          "reviewQuestion": "一定量理想气体在温度不变、物质的量不变时，体积增大为原来的 2 倍。若原来压力为 120 kPa，求新压力 p₂。",
+          "reviewAnswer": "p₂=60 kPa",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "p₂ = " },
+            { "type": "number", "id": "p2", "expected": 60 },
+            { "type": "label", "text": " kPa" }
+          ]
+        },
+        {
+          "name": "理想气体模型",
+          "exp": 5,
+          "concept": "理想气体模型包含两个基本假设：忽略分子自身的体积（与容器体积相比），忽略分子之间的相互作用力。真实气体在低压、高温条件下最接近理想气体。",
+          "question": "理想气体模型的两个基本假设是？",
+          "answer": "忽略分子体积、忽略分子间相互作用",
+          "answerSchema": [
+            { "type": "label", "text": "两个基本假设是：" },
+            {
+              "type": "choice",
+              "id": "ideal_assumptions",
+              "options": [
+                "忽略分子体积、忽略分子间相互作用",
+                "分子体积很大、分子间引力很强",
+                "分子静止不动、相互碰撞完全消失",
+                "分子大小与容器相当、相互作用力恒定"
+              ],
+              "expected": "忽略分子体积、忽略分子间相互作用"
+            }
+          ],
+          "reviewQuestion": "真实气体在什么条件下最接近理想气体行为？",
+          "reviewAnswer": "高温低压",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "最接近的条件是：" },
+            {
+              "type": "choice",
+              "id": "ideal_limit",
+              "options": ["高温低压", "高温高压", "低温低压", "低温高压"],
+              "expected": "高温低压"
+            }
+          ]
+        },
+        {
+          "name": "摩尔气体常数 R",
+          "exp": 5,
+          "concept": "摩尔气体常数 R=pV/(nT)，在理想气体极限下与气体种类无关。SI 制中 R=8.314 J·mol⁻¹·K⁻¹；使用 0.08206 atm·L·mol⁻¹·K⁻¹ 时注意单位配套。",
+          "question": "在 SI 单位制中，摩尔气体常数 R 的常用数值是？",
+          "answer": "8.314 J·mol⁻¹·K⁻¹",
+          "answerSchema": [
+            { "type": "label", "text": "R = " },
+            { "type": "number", "id": "r_value", "expected": 8.314 },
+            { "type": "label", "text": " J·mol⁻¹·K⁻¹" }
+          ],
+          "reviewQuestion": "R=0.08206 这个数值对应哪一套单位？",
+          "reviewAnswer": "atm·L·mol⁻¹·K⁻¹",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "对应单位是：" },
+            {
+              "type": "choice",
+              "id": "r_unit",
+              "options": ["atm·L·mol⁻¹·K⁻¹", "Pa·m³·mol⁻¹·K⁻¹", "J·mol⁻¹·K⁻¹", "kPa·m³·mol⁻¹·K⁻¹"],
+              "expected": "atm·L·mol⁻¹·K⁻¹"
+            }
+          ]
+        },
+        {
+          "name": "分子运动论：压力的本质与温度的微观解释",
+          "exp": 8,
+          "concept": "气体压力来源于分子对器壁的频繁碰撞，与分子数密度和平均平动动能有关；温度是分子热运动剧烈程度的量度，关系式为 ēₖ=3kT/2（k 为玻尔兹曼常数）。",
+          "question": "某理想气体的分子平均平动动能 ēₖ=6.21×10⁻²¹ J。求温度 T（k=1.38×10⁻²³ J·K⁻¹，结果取整数开尔文）。",
+          "answer": "T=300 K",
+          "answerSchema": [
+            { "type": "label", "text": "T = " },
+            { "type": "number", "id": "temperature", "expected": 300 },
+            { "type": "label", "text": " K" }
+          ],
+          "reviewQuestion": "从分子运动论看，气体温度升高意味着？",
+          "reviewAnswer": "分子平均平动动能增大，热运动更剧烈",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "温度升高意味着：" },
+            {
+              "type": "choice",
+              "id": "temperature_micro",
+              "options": [
+                "分子平均平动动能增大，热运动更剧烈",
+                "分子本身体积变大",
+                "分子间的距离变为零",
+                "分子的质量增加"
+              ],
+              "expected": "分子平均平动动能增大，热运动更剧烈"
+            }
+          ]
+        },
+        {
+          "name": "理想气体混合物的组成（摩尔分数）",
+          "exp": 6,
+          "concept": "混合物组成常用摩尔分数 yᵢ=nᵢ/n 表示，所有组分的摩尔分数之和等于 1。使用状态方程时，n 应取混合物的总物质的量。",
+          "question": "4 mol 理想气体混合物由 1 mol N₂ 和 3 mol O₂ 组成。求 N₂ 的摩尔分数 y(N₂)。",
+          "answer": "y(N₂)=0.25",
+          "answerSchema": [
+            { "type": "label", "text": "y(N₂) = " },
+            { "type": "number", "id": "mole_fraction", "expected": 0.25 },
+            { "type": "label", "text": "" }
+          ],
+          "reviewQuestion": "摩尔分数的定义是？",
+          "reviewAnswer": "某组分的物质的量与混合物总物质的量之比",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "摩尔分数的定义是：" },
+            {
+              "type": "choice",
+              "id": "mole_fraction_def",
+              "options": [
+                "某组分的物质的量与混合物总物质的量之比",
+                "某组分的质量与混合物总质量之比",
+                "某组分的体积与混合物总体积之比",
+                "某组分的压力与标准压力之比"
+              ],
+              "expected": "某组分的物质的量与混合物总物质的量之比"
+            }
+          ]
+        },
+        {
+          "name": "道尔顿分压定律",
+          "exp": 8,
+          "concept": "理想气体混合物的总压力等于各组分分压力之和；组分分压 pᵢ=yᵢp，也等于该组分单独占据总体积时的压力。",
+          "question": "某理想气体混合物总压 p=200 kPa，其中 O₂ 的摩尔分数 y(O₂)=0.2。求 O₂ 的分压 p(O₂)。",
+          "answer": "p(O₂)=40 kPa",
+          "answerSchema": [
+            { "type": "label", "text": "p(O₂) = " },
+            { "type": "number", "id": "partial_pressure", "expected": 40 },
+            { "type": "label", "text": " kPa" }
+          ],
+          "reviewQuestion": "某混合物中 N₂ 与 O₂ 的分压分别为 150 kPa 与 50 kPa。求 O₂ 的摩尔分数 y(O₂)。",
+          "reviewAnswer": "y(O₂)=0.25",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "y(O₂) = " },
+            { "type": "number", "id": "y_o2", "expected": 0.25 },
+            { "type": "label", "text": "" }
+          ]
+        },
+        {
+          "name": "阿马加分体积定律",
+          "exp": 8,
+          "concept": "理想气体混合物的总体积等于各组分分体积之和；组分分体积 Vᵢ=yᵢV，也等于该组分单独处于总压时的体积。分体积与分压是同一组成关系的两种表述。",
+          "question": "某理想气体混合物总体积 V=50 L，组分 A 的摩尔分数 y(A)=0.3。求 A 的分体积 V(A)。",
+          "answer": "V(A)=15 L",
+          "answerSchema": [
+            { "type": "label", "text": "V(A) = " },
+            { "type": "number", "id": "partial_volume", "expected": 15 },
+            { "type": "label", "text": " L" }
+          ],
+          "reviewQuestion": "A、B 两组分在同温同压下分体积分别为 8 L 与 12 L。求 A 的摩尔分数 y(A)。",
+          "reviewAnswer": "y(A)=0.4",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "y(A) = " },
+            { "type": "number", "id": "y_a", "expected": 0.4 },
+            { "type": "label", "text": "" }
+          ]
+        },
+        {
+          "name": "混合气体的平均摩尔质量",
+          "exp": 6,
+          "concept": "混合气体的平均摩尔质量 M̄=m/n=ΣyᵢMᵢ，是各组分摩尔质量按摩尔分数加权的平均值；结合 pV=nRT 可写为 pM̄=ρRT，用于由密度求摩尔质量。",
+          "question": "等物质的量的 N₂（M=28 g·mol⁻¹）与 O₂（M=32 g·mol⁻¹）组成混合物。求平均摩尔质量 M̄。",
+          "answer": "M̄=30 g·mol⁻¹",
+          "answerSchema": [
+            { "type": "label", "text": "M̄ = " },
+            { "type": "number", "id": "avg_molar_mass", "expected": 30 },
+            { "type": "label", "text": " g·mol⁻¹" }
+          ],
+          "reviewQuestion": "由密度求气体摩尔质量时，ρ、M̄、p、T 满足的关系是？",
+          "reviewAnswer": "pM̄=ρRT",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "正确关系是：" },
+            {
+              "type": "choice",
+              "id": "density_formula",
+              "options": ["pM̄=ρRT", "pρ=M̄RT", "M̄=pRT/ρ", "ρM̄=pT/R"],
+              "expected": "pM̄=ρRT"
+            }
+          ]
+        }
+      ],
+      "challenges": [
+        {
+          "name": "连通容器混合气体（总压与分压）",
+          "exp": 10,
+          "concept": "提示：打开连通管前后，各组分的物质的量不变；混合后体积为两瓶体积之和，总压由总物质的量决定，分压仍满足 pᵢ=yᵢp。",
+          "question": "恒温下 A 瓶（2 L）装 N₂，p=100 kPa；B 瓶（3 L）装 O₂，p=200 kPa。打开连通管使两瓶相通（体积相加、温度不变，均视为理想气体）。求混合后的总压 p 与 N₂ 的分压 p(N₂)。",
+          "answer": "p=160 kPa；p(N₂)=40 kPa",
+          "answerSchema": [
+            { "type": "label", "text": "混合后总压 p = " },
+            { "type": "number", "id": "total_pressure", "expected": 160 },
+            { "type": "label", "text": " kPa" },
+            { "type": "break" },
+            { "type": "label", "text": "N₂ 分压 p(N₂) = " },
+            { "type": "number", "id": "pn2", "expected": 40 },
+            { "type": "label", "text": " kPa" }
+          ]
+        },
+        {
+          "name": "由密度求混合气体平均摩尔质量",
+          "exp": 10,
+          "concept": "提示：先由 pV=nRT 把密度换算成平均摩尔质量，用 M̄=m/n；也可直接用 pM̄=ρRT，注意单位一致（R=8.314 J·mol⁻¹·K⁻¹）。",
+          "question": "T=300 K、p=100 kPa 下测得某混合气体的密度 ρ=1.24 kg·m⁻³。求该混合气体的平均摩尔质量 M̄（g·mol⁻¹）。",
+          "answer": "M̄≈31.0 g·mol⁻¹",
+          "answerSchema": [
+            { "type": "label", "text": "M̄ ≈ " },
+            { "type": "number", "id": "avg_m", "expected": 31.0 },
+            { "type": "label", "text": " g·mol⁻¹" }
+          ]
+        }
+      ]
+    }
+  ]
+}

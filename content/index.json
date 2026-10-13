@@ -1,0 +1,28 @@
+{
+  "packs": [
+    {
+      "id": "medai",
+      "name": "医学人工智能·概念卡",
+      "description": "医学与 AI 交叉方向示例包：5 个模块、15 个概念",
+      "file": "content/medai.json"
+    },
+    {
+      "id": "physics",
+      "name": "大学物理·力学",
+      "description": "质点运动学与运动定理：27 个技能卡与复习题",
+      "file": "content/physics.json"
+    },
+    {
+      "id": "physchem",
+      "name": "物理化学·上册",
+      "description": "第一章气体 pVT（§1.1–1.2）：8 个技能 + 2 道进阶挑战",
+      "file": "content/physchem.json"
+    },
+    {
+      "id": "probability",
+      "name": "概率统计·概念卡",
+      "description": "样本空间与事件、条件概率（含手绘示意图）",
+      "file": "content/probability.json"
+    }
+  ]
+}

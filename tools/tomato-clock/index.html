@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>番茄钟 · 自定义目标版</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🍅 番茄钟</h1>
+
+    <!-- 倒计时 -->
+    <div class="card timer-card">
+      <p id="phase-label" class="phase-label">专注中</p>
+      <div id="timer-display" class="timer-display">25:00</div>
+      <div class="timer-buttons">
+        <button id="timer-start" class="btn primary">开始</button>
+        <button id="timer-pause" class="btn">暂停</button>
+        <button id="timer-reset" class="btn">重置</button>
+      </div>
+      <button id="skip-break" class="btn hidden">跳过休息 →</button>
+      <label class="continuous">
+        <input id="continuous-mode" type="checkbox" checked />
+        连续模式：完成后自动进入 5 分钟休息，休息结束自动开始下一轮
+      </label>
+      <p class="hint">已完成番茄：<span id="pomodoro-count">0</span> 个</p>
+    </div>
+
+    <!-- 自定义奖励目标 -->
+    <div class="card goal-card">
+      <h2>🎯 自定义奖励目标</h2>
+      <div class="goal-setup">
+        <input id="goal-reward" type="text" placeholder="达成后的奖励（如：喝奶茶、看一集动漫）" />
+        <div class="goal-row">
+          <label>每完成 <input id="goal-target" type="number" min="1" value="4" /> 
+            <select id="goal-unit">
+              <option value="pomodoro">个番茄</option>
+              <option value="card">张学习卡</option>
+            </select>
+          </label>
+          <button id="goal-set" class="btn primary">设定目标</button>
+        </div>
+      </div>
+
+      <div id="goal-active" class="goal-active hidden">
+        <p>奖励：<strong id="goal-reward-text"></strong></p>
+        <div class="progress-bar">
+          <div id="goal-progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="goal-progress-text" class="hint"></p>
+        <div class="goal-actions">
+          <button id="goal-add-card" class="btn hidden">＋1 张学习卡</button>
+          <button id="goal-cancel" class="btn danger">放弃目标</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 今日任务 -->
+    <div class="card">
+      <h2>📋 今日任务</h2>
+      <div class="task-add">
+        <input id="task-input" type="text" placeholder="要完成什么？" />
+        <button id="task-add-btn" class="btn primary">添加</button>
+      </div>
+      <ul id="task-list" class="list"></ul>
+    </div>
+
+    <!-- 历史目标 -->
+    <div class="card">
+      <h2>🏆 已完成目标</h2>
+      <ul id="history-list" class="list"></ul>
+    </div>
+
+    <p class="footer">数据保存在浏览器本地</p>
+  </div>
+
+  <!-- 达成庆祝弹窗 -->
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-box">
+      <h2 id="overlay-title">🎉 太棒了！</h2>
+      <p id="overlay-message"></p>
+      <button id="overlay-close" class="btn primary">开心收下！</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

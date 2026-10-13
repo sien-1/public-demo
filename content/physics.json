@@ -1,0 +1,798 @@
+{
+  "title": "大学物理·力学",
+  "chapters": [
+    {
+      "title": "第一章 质点的运动",
+      "skills": [
+        {
+          "name": "参考系、质点、位置矢量与位移",
+          "exp": 5,
+          "concept": "运动学先把“物体”抽象成质点，并把位置写成位置矢量 r(t)。位移是 Δr = r(t₂) − r(t₁)，只由始末位置决定，是矢量；高中常把位置当标量、只关心路程，大学必须选定参考系并用矢量描述位置的变化。",
+          "question": "一质点的位置矢量 r(t)=(3t²+1)i+(4t²+2)j（SI，i、j 为 x、y 轴单位矢量）。求从 t=1s 到 t=2s 的位移矢量及其大小。",
+          "answer": "Δr=9i+12j (m)，|Δr|=15m",
+          "reviewQuestion": "质点位置矢量 r(t)=(2t²−t)i+2t²j（SI，i、j 为 x、y 轴单位矢量）。求从 t=0 到 t=2s 的位移矢量及其大小。",
+          "reviewAnswer": "Δr=6i+8j (m)，|Δr|=10m",
+          "answerSchema": [
+            { "type": "label", "text": "Δr = " },
+            { "type": "number", "id": "dx", "expected": 9 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "dy", "expected": 12 },
+            { "type": "label", "text": " j (m)，大小 |Δr| = " },
+            { "type": "number", "id": "mag", "expected": 15 },
+            { "type": "label", "text": " m" }
+          ],
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "Δr = " },
+            { "type": "number", "id": "rx", "expected": 6 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "ry", "expected": 8 },
+            { "type": "label", "text": " j (m)，大小 |Δr| = " },
+            { "type": "number", "id": "mag", "expected": 10 },
+            { "type": "label", "text": " m" }
+          ]
+        },
+        {
+          "name": "速度与速率的微积分定义：由位置矢量求导得速度",
+          "exp": 8,
+          "concept": "速度定义为 v=dr/dt，是位置矢量对时间的一阶导数，方向沿轨迹切线；速率是速度的大小 |v|。高中只处理匀速或平均速度，大学用导数严格定义“瞬时速度”，并区分矢量的速度与标量的速率。",
+          "question": "质点位置矢量 r(t)=(t²−t+2)i+(4t−1)j（SI）。求速度函数 v(t)。",
+          "answer": "v(t)=(2t−1)i+4j (m/s)",
+          "answerSchema": [
+            { "type": "label", "text": "v(t) = ( " },
+            { "type": "number", "id": "vx_t_coef", "expected": 2 },
+            { "type": "choice", "id": "vx_power", "options": ["t", "t²", "t³"], "expected": "t" },
+            { "type": "label", "text": " + " },
+            { "type": "number", "id": "vx_const", "expected": -1 },
+            { "type": "label", "text": " ) i + " },
+            { "type": "number", "id": "vy_const", "expected": 4 },
+            { "type": "label", "text": " j (m/s)" }
+          ],
+          "reviewQuestion": "质点位置矢量 r(t)=(t²+3t+2)i+(2t³+6t−1)j（SI）。求 t=1s 时的速度矢量与速率。",
+          "reviewAnswer": "v(1)=5i+12j (m/s)；速率 |v|=13m/s",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "v(1) = " },
+            { "type": "number", "id": "vx", "expected": 5 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "vy", "expected": 12 },
+            { "type": "label", "text": " j (m/s)" },
+            { "type": "break" },
+            { "type": "label", "text": "速率 = " },
+            { "type": "number", "id": "speed", "expected": 13 },
+            { "type": "label", "text": " m/s" }
+          ]
+        },
+        {
+          "name": "加速度的微积分定义：由速度求导得加速度",
+          "exp": 8,
+          "concept": "加速度定义为 a=dv/dt=d²r/dt²，即速度对时间的一阶导数。高中只在匀变速情形背公式，大学对任意运动都用导数求瞬时加速度；注意 a 的方向一般不与 v 相同。",
+          "question": "质点速度 v(t)=(t²−4t)i+(6t+1)j（SI）。求 t=2s 时的加速度矢量；并求 aₓ=0 出现的时刻 t。",
+          "answer": "a(2)=0i+6j (m/s²)，即 a(2)=6j；aₓ=0 出现在 t=2s",
+          "answerSchema": [
+            { "type": "label", "text": "a(2) = " },
+            { "type": "number", "id": "ax", "expected": 0 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "ay", "expected": 6 },
+            { "type": "label", "text": " j (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "aₓ = 0 的时刻 t = " },
+            { "type": "number", "id": "t_zero", "expected": 2 },
+            { "type": "label", "text": " s" }
+          ],
+          "reviewQuestion": "质点速度 v(t)=(t²+t)i+4tj（SI）。求 t=1s 时的加速度矢量及其大小。",
+          "reviewAnswer": "a(1)=3i+4j (m/s²)；|a|=5m/s²",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "a(1) = " },
+            { "type": "number", "id": "ax", "expected": 3 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "ay", "expected": 4 },
+            { "type": "label", "text": " j (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "|a| = " },
+            { "type": "number", "id": "mag", "expected": 5 },
+            { "type": "label", "text": " m/s²" }
+          ]
+        },
+        {
+          "name": "已知加速度求速度、位置：积分运算",
+          "exp": 10,
+          "concept": "已知 a(t)，由 v=∫a dt 和 r=∫v dt 逐次积分并代入初始条件定出积分常数。高中的匀变速公式只是 a 为常量时的特例，大学遇到变加速度必须积分。",
+          "question": "一质点做平面运动，加速度 a(t)=(6t−2)i+4j（SI）。t=0 时 v₀=−2i (m/s)、r₀=0。用两次积分求位置函数 r(t)。",
+          "answer": "r(t)=(t³−t²−2t)i+2t²j (m)",
+          "answerSchema": [
+            { "type": "label", "text": "r(t) = ( " },
+            { "type": "number", "id": "rx_t3", "expected": 1 },
+            { "type": "label", "text": " t³ + " },
+            { "type": "number", "id": "rx_t2", "expected": -1 },
+            { "type": "label", "text": " t² + " },
+            { "type": "number", "id": "rx_t", "expected": -2 },
+            { "type": "label", "text": " t ) i + ( " },
+            { "type": "number", "id": "ry_t2", "expected": 2 },
+            { "type": "label", "text": " t² ) j (m)" }
+          ],
+          "reviewQuestion": "一质点做平面运动，加速度 a(t)=12ti+8j（SI）。t=0 时 v₀=0、r₀=0。用两次积分求位置函数 r(t)。",
+          "reviewAnswer": "r(t)=2t³i+4t²j (m)",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "r(t) = " },
+            { "type": "number", "id": "rx_t3", "expected": 2 },
+            { "type": "label", "text": " t³ i + " },
+            { "type": "number", "id": "ry_t2", "expected": 4 },
+            { "type": "label", "text": " t² j (m)" }
+          ]
+        },
+        {
+          "name": "直线运动：匀变速与非匀变速",
+          "exp": 6,
+          "concept": "直线运动可退化为沿一个坐标轴的正负代数量：v=dx/dt、a=dv/dt，正负号表示方向。匀变速公式只在 a 为常量时成立；若 a 随时间或位置变化，就属于非匀变速，必须回到微积分。",
+          "question": "一质点沿 x 轴运动，位置 x(t)=t³−6t²+9t+2（SI）。v=0 出现在两个时刻 t₁<t₂。求 t₁、t₂ 及对应的加速度 a₁、a₂，并判断是否为匀变速直线运动。",
+          "answer": "t₁=1s、a₁=−6 m/s²；t₂=3s、a₂=+6 m/s²；非匀变速",
+          "answerSchema": [
+            { "type": "label", "text": "t₁ = " },
+            { "type": "number", "id": "t1", "expected": 1 },
+            { "type": "label", "text": " s，此时 a₁ = " },
+            { "type": "number", "id": "a1", "expected": -6 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "t₂ = " },
+            { "type": "number", "id": "t2", "expected": 3 },
+            { "type": "label", "text": " s，此时 a₂ = " },
+            { "type": "number", "id": "a2", "expected": 6 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "是否为匀变速直线运动：" },
+            { "type": "choice", "id": "uniform", "options": ["是", "不是"], "expected": "不是" }
+          ],
+          "reviewQuestion": "一质点沿 x 轴运动，位置 x(t)=t³−9t²+24t−1（SI）。v=0 出现在两个时刻 t₁<t₂。求 t₁、t₂ 及对应的加速度 a₁、a₂。",
+          "reviewAnswer": "t₁=2s、a₁=−6 m/s²；t₂=4s、a₂=+6 m/s²",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "t₁ = " },
+            { "type": "number", "id": "t1", "expected": 2 },
+            { "type": "label", "text": " s，此时 a₁ = " },
+            { "type": "number", "id": "a1", "expected": -6 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "t₂ = " },
+            { "type": "number", "id": "t2", "expected": 4 },
+            { "type": "label", "text": " s，此时 a₂ = " },
+            { "type": "number", "id": "a2", "expected": 6 },
+            { "type": "label", "text": " m/s²" }
+          ]
+        },
+        {
+          "name": "抛体运动：矢量分解与参数方程",
+          "exp": 8,
+          "concept": "只受重力时 a=−gj，可分解为水平匀速与竖直匀加速两条独立的一维运动，再用矢量合成 r(t)=v₀t+½gt²。与高中相比，大学强调把运动写成参数方程，轨迹则通过消去参数 t 得到。",
+          "question": "从地面以 v₀=30i+40j (m/s) 抛出一质点（取 g=10 m/s²，不计空气阻力）。写出位置矢量 r(t)，并求射程与最大高度。",
+          "answer": "r(t)=30ti+(40t−5t²)j；射程 240m，最大高度 80m",
+          "answerSchema": [
+            { "type": "label", "text": "r(t) = " },
+            { "type": "number", "id": "rx", "expected": 30 },
+            { "type": "label", "text": " t i + ( " },
+            { "type": "number", "id": "vy0", "expected": 40 },
+            { "type": "label", "text": " t + " },
+            { "type": "number", "id": "gy2", "expected": -5 },
+            { "type": "label", "text": " t² ) j" },
+            { "type": "break" },
+            { "type": "label", "text": "射程 = " },
+            { "type": "number", "id": "range", "expected": 240 },
+            { "type": "label", "text": " m" },
+            { "type": "break" },
+            { "type": "label", "text": "最大高度 = " },
+            { "type": "number", "id": "height", "expected": 80 },
+            { "type": "label", "text": " m" }
+          ],
+          "reviewQuestion": "从高 h=45m 的悬崖顶以 v₀=20i (m/s) 水平抛出一质点（取 g=10 m/s²，i 水平向右、j 竖直向上，不计空气阻力）。写出位置矢量 r(t)，并求质点落到崖底（y=0）的时刻与水平距离。",
+          "reviewAnswer": "r(t)=20ti+(45−5t²)j；t=3s，水平距离 60m",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "r(t) = " },
+            { "type": "number", "id": "vx", "expected": 20 },
+            { "type": "label", "text": " t i + ( " },
+            { "type": "number", "id": "y0", "expected": 45 },
+            { "type": "label", "text": " + " },
+            { "type": "number", "id": "gy2", "expected": -5 },
+            { "type": "label", "text": " t² ) j" },
+            { "type": "break" },
+            { "type": "label", "text": "落地时刻 t = " },
+            { "type": "number", "id": "t_land", "expected": 3 },
+            { "type": "label", "text": " s" },
+            { "type": "break" },
+            { "type": "label", "text": "水平距离 = " },
+            { "type": "number", "id": "range", "expected": 60 },
+            { "type": "label", "text": " m" }
+          ]
+        },
+        {
+          "name": "圆周运动：角量与线量关系",
+          "exp": 8,
+          "concept": "角位置 θ(t) 通过 ω=dθ/dt、α=dω/dt 与时间相关；线量与角量的关系为 s=Rθ、v=Rω、a_t=Rα。高中主要讨论匀速圆周，大学遇到角速度随时变化的圆周运动时同样要用导数。",
+          "question": "质点沿半径 R=2m 的圆周运动，角位置 θ(t)=t³/3+3t（rad，SI）。求 t=2s 时的角速度、速率与切向加速度，并判断此时是否为匀角加速圆周运动。",
+          "answer": "ω=7 rad/s，v=14 m/s，a_t=8 m/s²；因 α=2t 随时间变化，不是匀角加速圆周运动",
+          "answerSchema": [
+            { "type": "label", "text": "t=2s 时：ω = " },
+            { "type": "number", "id": "omega", "expected": 7 },
+            { "type": "label", "text": " rad/s" },
+            { "type": "break" },
+            { "type": "label", "text": "v = " },
+            { "type": "number", "id": "speed", "expected": 14 },
+            { "type": "label", "text": " m/s" },
+            { "type": "break" },
+            { "type": "label", "text": "a_t = " },
+            { "type": "number", "id": "at", "expected": 8 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "是否为匀角加速圆周运动：" },
+            { "type": "choice", "id": "uniform_ang", "options": ["是", "不是"], "expected": "不是" }
+          ],
+          "reviewQuestion": "质点沿半径 R=2m 的圆周运动，角位置 θ(t)=t⁴/4+2t（rad，SI）。求 t=1s 时的角速度、速率与切向加速度，并判断是否为匀角加速圆周运动。",
+          "reviewAnswer": "ω=3 rad/s，v=6 m/s，a_t=6 m/s²；因 α=3t² 随时间变化，不是匀角加速圆周运动",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "t=1s 时：ω = " },
+            { "type": "number", "id": "omega", "expected": 3 },
+            { "type": "label", "text": " rad/s" },
+            { "type": "break" },
+            { "type": "label", "text": "v = " },
+            { "type": "number", "id": "speed", "expected": 6 },
+            { "type": "label", "text": " m/s" },
+            { "type": "break" },
+            { "type": "label", "text": "a_t = " },
+            { "type": "number", "id": "at", "expected": 6 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "是否为匀角加速圆周运动：" },
+            { "type": "choice", "id": "uniform_ang", "options": ["是", "不是"], "expected": "不是" }
+          ]
+        },
+        {
+          "name": "自然坐标系：切向加速度（速度大小变化）",
+          "exp": 10,
+          "concept": "自然坐标系沿轨迹取切向 τ̂ 与法向 n̂，把加速度分解为 a=a_t τ̂+a_n n̂。切向加速度 a_t=dv/dt 只改变速率大小，可为负（减速）；高中没有系统的自然坐标，也不会按“改变快慢/改变方向”分解加速度。",
+          "question": "质点沿曲线轨道运动，路程 s(t)=t³/3−2t²+5t（m，t≥0）。求 t=3s 时的速度与切向加速度，并求速率最小的时刻及该时刻的速率。",
+          "answer": "v(3)=2 m/s，a_t(3)=2 m/s²；速率最小出现在 t=2s，最小速率 1m/s",
+          "answerSchema": [
+            { "type": "label", "text": "v(3) = " },
+            { "type": "number", "id": "v3", "expected": 2 },
+            { "type": "label", "text": " m/s" },
+            { "type": "break" },
+            { "type": "label", "text": "a_t(3) = " },
+            { "type": "number", "id": "at3", "expected": 2 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "速率最小的时刻 t = " },
+            { "type": "number", "id": "t_min", "expected": 2 },
+            { "type": "label", "text": " s，此时速率 = " },
+            { "type": "number", "id": "v_min", "expected": 1 },
+            { "type": "label", "text": " m/s" }
+          ],
+          "reviewQuestion": "质点沿曲线轨道运动，路程 s(t)=t³−6t²+15t（m，t≥0）。求 t=3s 时的速度与切向加速度，并求切向加速度为零的时刻及该时刻的速率。",
+          "reviewAnswer": "v(3)=6 m/s，a_t(3)=6 m/s²；a_t=0 出现在 t=2s，此时速率=3m/s",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "v(3) = " },
+            { "type": "number", "id": "v3", "expected": 6 },
+            { "type": "label", "text": " m/s" },
+            { "type": "break" },
+            { "type": "label", "text": "a_t(3) = " },
+            { "type": "number", "id": "at3", "expected": 6 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "a_t = 0 的时刻 t = " },
+            { "type": "number", "id": "t_zero", "expected": 2 },
+            { "type": "label", "text": " s，此时速率 = " },
+            { "type": "number", "id": "v_at_zero", "expected": 3 },
+            { "type": "label", "text": " m/s" }
+          ]
+        },
+        {
+          "name": "自然坐标系：法向加速度（速度方向变化）",
+          "exp": 10,
+          "concept": "法向加速度 a_n=v²/R 指向圆心（一般曲线中 R 换成该点的曲率半径），只改变速度方向。高中只接触固定半径的圆周且不区分切向、法向；大学用 a=√(a_t²+a_n²) 合成总加速度，并用角度描述其方向。",
+          "question": "汽车沿半径 R=200m 的圆弧弯道行驶，某时刻速率 v=40m/s，且速率正以 6 m/s² 的切向加速度增大。求此刻的法向加速度、总加速度大小，以及总加速度与速度（切向）方向的夹角 θ（结果保留一位小数）。",
+          "answer": "a_n=8 m/s²，总加速度=10 m/s²；θ≈53.1°",
+          "answerSchema": [
+            { "type": "label", "text": "a_n = " },
+            { "type": "number", "id": "an", "expected": 8 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "总加速度 a = " },
+            { "type": "number", "id": "a_total", "expected": 10 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "夹角 θ（与切向）≈ " },
+            { "type": "number", "id": "theta", "expected": 53.1 },
+            { "type": "label", "text": " °" }
+          ],
+          "reviewQuestion": "摩托车沿半径 R=100m 的圆弧弯道行驶，某时刻速率 v=30m/s，且速率正以 12 m/s² 的切向加速度增大。求此刻的法向加速度、总加速度大小，以及总加速度与速度（切向）方向的夹角。",
+          "reviewAnswer": "a_n=9 m/s²，总加速度=15 m/s²；θ≈36.9°",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "a_n = " },
+            { "type": "number", "id": "an", "expected": 9 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "总加速度 a = " },
+            { "type": "number", "id": "a_total", "expected": 15 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "夹角 θ（与切向）≈ " },
+            { "type": "number", "id": "theta", "expected": 36.9 },
+            { "type": "label", "text": " °" }
+          ]
+        },
+        {
+          "name": "一般曲线运动的曲率半径计算",
+          "exp": 12,
+          "concept": "任意平面轨迹的弯曲程度用曲率半径 ρ 描述，可由 ρ=v³/|v×a|=v²/a_n 求出，其中 a_n 是加速度垂直于速度的分量。高中只算固定半径的圆；大学给出位置矢量 r(t) 时，要先求导得到 v、a，再分离切向与法向。",
+          "question": "质点位置矢量 r(t)=ti+t²j（SI）。求 t=0 时质点的速度大小、加速度大小、切向加速度、法向加速度，并求轨迹在该点的曲率半径 ρ。",
+          "answer": "v(0)=1 m/s，a=2 m/s²；a_t(0)=0，a_n(0)=2 m/s²；ρ=0.5m",
+          "answerSchema": [
+            { "type": "label", "text": "v(0) = " },
+            { "type": "number", "id": "v0", "expected": 1 },
+            { "type": "label", "text": " m/s（沿 +i）" },
+            { "type": "break" },
+            { "type": "label", "text": "a = " },
+            { "type": "number", "id": "a0", "expected": 2 },
+            { "type": "label", "text": " m/s²（沿 +j）" },
+            { "type": "break" },
+            { "type": "label", "text": "a_t(0) = " },
+            { "type": "number", "id": "at0", "expected": 0 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "a_n(0) = " },
+            { "type": "number", "id": "an0", "expected": 2 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "曲率半径 ρ = " },
+            { "type": "number", "id": "rho", "expected": 0.5 },
+            { "type": "label", "text": " m" }
+          ],
+          "reviewQuestion": "质点位置矢量 r(t)=2ti+t²j（SI）。求 t=0 时质点的速度、加速度、切向加速度与法向加速度，并求轨迹在该点的曲率半径 ρ。",
+          "reviewAnswer": "v(0)=2 m/s，a=2 m/s²；a_t(0)=0，a_n(0)=2 m/s²；ρ=2m",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "v(0) = " },
+            { "type": "number", "id": "v0", "expected": 2 },
+            { "type": "label", "text": " m/s（沿 +i）" },
+            { "type": "break" },
+            { "type": "label", "text": "a = " },
+            { "type": "number", "id": "a0", "expected": 2 },
+            { "type": "label", "text": " m/s²（沿 +j）" },
+            { "type": "break" },
+            { "type": "label", "text": "a_t(0) = " },
+            { "type": "number", "id": "at0", "expected": 0 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "a_n(0) = " },
+            { "type": "number", "id": "an0", "expected": 2 },
+            { "type": "label", "text": " m/s²" },
+            { "type": "break" },
+            { "type": "label", "text": "曲率半径 ρ = " },
+            { "type": "number", "id": "rho", "expected": 2 },
+            { "type": "label", "text": " m" }
+          ]
+        },
+        {
+          "name": "相对运动：伽利略速度变换",
+          "exp": 8,
+          "concept": "伽利略速度变换为 v(质点对A)=v(质点对B)+v(B对A)，即“绝对速度=相对速度+牵连速度”，是矢量加法。高中常在一条直线上做加减，大学必须按矢量分量合成（低速近似下成立）。",
+          "question": "江水相对岸向东以 3 m/s 流动（i 向东）。小船相对水以 4j (m/s) 向北行驶。求船相对岸的速度矢量、速率，以及与正东方向的夹角 θ（结果保留一位小数）。",
+          "answer": "v=3i+4j (m/s)，速率 5 m/s；θ≈53.1°（东偏北）",
+          "answerSchema": [
+            { "type": "label", "text": "v = " },
+            { "type": "number", "id": "vx", "expected": 3 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "vy", "expected": 4 },
+            { "type": "label", "text": " j (m/s)" },
+            { "type": "break" },
+            { "type": "label", "text": "速率 = " },
+            { "type": "number", "id": "speed", "expected": 5 },
+            { "type": "label", "text": " m/s" },
+            { "type": "break" },
+            { "type": "label", "text": "与正东方向的夹角 θ ≈ " },
+            { "type": "number", "id": "theta", "expected": 53.1 },
+            { "type": "label", "text": " °" }
+          ],
+          "reviewQuestion": "雨滴相对地面以 8 m/s 竖直下落（取 i 向东、j 竖直向上）。汽车以 6i (m/s) 向东匀速行驶。求雨滴相对汽车的速度矢量、速率，以及与竖直向下方向的夹角 θ（结果保留一位小数）。",
+          "reviewAnswer": "v=−6i−8j (m/s)，速率 10 m/s；θ≈36.9°（向后下方）",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "v = " },
+            { "type": "number", "id": "vx", "expected": -6 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "vy", "expected": -8 },
+            { "type": "label", "text": " j (m/s)" },
+            { "type": "break" },
+            { "type": "label", "text": "速率 = " },
+            { "type": "number", "id": "speed", "expected": 10 },
+            { "type": "label", "text": " m/s" },
+            { "type": "break" },
+            { "type": "label", "text": "与竖直向下方向的夹角 θ ≈ " },
+            { "type": "number", "id": "theta", "expected": 36.9 },
+            { "type": "label", "text": " °" }
+          ]
+        },
+        {
+          "name": "相对运动中的加速度变换",
+          "exp": 6,
+          "concept": "对两个相对匀速平动的参考系，加速度满足 a(质点对A)=a(质点对B)，因为牵连加速度为零，所以加速度变换比速度变换简单。若 B 相对 A 有加速度，则属非惯性系问题，需要另加惯性力处理。",
+          "question": "火车以 20 m/s 匀速向东行驶。车内测得小球相对火车的加速度 a′=(3i−4j) m/s²。求小球相对地面的加速度，并选择：是否需要再叠加火车的加速度？",
+          "answer": "a=3i−4j (m/s²)；不需要（火车匀速，加速度为零）",
+          "answerSchema": [
+            { "type": "label", "text": "a = " },
+            { "type": "number", "id": "ax", "expected": 3 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "ay", "expected": -4 },
+            { "type": "label", "text": " j (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "是否需要再叠加火车的加速度：" },
+            { "type": "choice", "id": "add_train", "options": ["需要", "不需要"], "expected": "不需要" }
+          ],
+          "reviewQuestion": "一艘船相对岸以 (3i+4j) m/s 匀速航行。船内测得小球相对船的加速度为 a′=(2i−1j) m/s²。求小球相对岸的加速度，并选择：是否需要再叠加船的加速度？",
+          "reviewAnswer": "a=2i−1j (m/s²)；不需要（船匀速，加速度为零）",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "a = " },
+            { "type": "number", "id": "ax", "expected": 2 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "ay", "expected": -1 },
+            { "type": "label", "text": " j (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "是否需要再叠加船的加速度：" },
+            { "type": "choice", "id": "add_boat", "options": ["需要", "不需要"], "expected": "不需要" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "第二章 质点的运动定理",
+      "skills": [
+        {
+          "name": "牛顿第二定律的微分形式（F=dp/dt）",
+          "exp": 6,
+          "concept": "牛顿第二定律的微分形式 F=dp/dt 对质量变化的情形也成立，比高中常用的 F=ma 更基本；质量不变时自动退化为 F=ma。力和动量都是矢量，因此要对各分量分别列方程。",
+          "question": "质量 m=2kg 的质点，速度 v(t)=(t²+3t)i+2t²j（SI）。用 F=dp/dt 求它所受的合力 F(t)。",
+          "answer": "F(t)=(4t+6)i+8tj (N)",
+          "answerSchema": [
+            { "type": "label", "text": "F(t) = ( " },
+            { "type": "number", "id": "fx_t", "expected": 4 },
+            { "type": "label", "text": " t + " },
+            { "type": "number", "id": "fx_c", "expected": 6 },
+            { "type": "label", "text": " ) i + ( " },
+            { "type": "number", "id": "fy_t", "expected": 8 },
+            { "type": "label", "text": " t ) j (N)" }
+          ],
+          "reviewQuestion": "质量 m=2kg 的质点受合力 F(t)=(6t+2)i+8tj（N）。求它的加速度函数 a(t)，并选择：常质量情形下 F=dp/dt 与 F=ma 是否给出同一加速度？",
+          "reviewAnswer": "a(t)=(3t+1)i+4tj (m/s²)；是",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "a(t) = ( " },
+            { "type": "number", "id": "ax_t", "expected": 3 },
+            { "type": "label", "text": " t + " },
+            { "type": "number", "id": "ax_c", "expected": 1 },
+            { "type": "label", "text": " ) i + ( " },
+            { "type": "number", "id": "ay_t", "expected": 4 },
+            { "type": "label", "text": " t ) j (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "F=dp/dt 与 F=ma 是否给出同一加速度：" },
+            { "type": "choice", "id": "same", "options": ["是", "否"], "expected": "是" }
+          ]
+        },
+        {
+          "name": "变力作用下的一维运动（F=ma(t,x,v)）",
+          "exp": 10,
+          "concept": "当合力随时间、位置或速度变化时，F=ma 给出的是微分方程：先由 a 积分求 v，再由 v 积分求 x。高中只处理恒定力的匀变速情形，大学必须回到微积分。",
+          "question": "质量 m=2kg 的质点沿 x 轴运动，合力 F(t)=(8−12t)i（N），t=0 时 v₀=1i (m/s)。求速度函数 v(t)，并求 t=1s 时的速度。",
+          "answer": "v(t)=(1+4t−3t²)i (m/s)；v(1)=2i (m/s)",
+          "answerSchema": [
+            { "type": "label", "text": "v(t) = ( " },
+            { "type": "number", "id": "vt2", "expected": -3 },
+            { "type": "label", "text": " t² + " },
+            { "type": "number", "id": "vt1", "expected": 4 },
+            { "type": "label", "text": " t + " },
+            { "type": "number", "id": "vt0", "expected": 1 },
+            { "type": "label", "text": " ) i (m/s)" },
+            { "type": "break" },
+            { "type": "label", "text": "v(1) = " },
+            { "type": "number", "id": "v1", "expected": 2 },
+            { "type": "label", "text": " i (m/s)" }
+          ],
+          "reviewQuestion": "质量 m=1kg 的质点沿 x 轴运动，受到阻力 F=−vi（N，v 为瞬时速率，i 沿运动方向）。若初速度为 v₀i，求速率减为初值一半所需的时间 t（保留三位小数）。",
+          "reviewAnswer": "t=ln2≈0.693 s",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "t ≈ " },
+            { "type": "number", "id": "t_half", "expected": 0.693 },
+            { "type": "label", "text": " s" }
+          ]
+        },
+        {
+          "name": "常见力（重力、弹力、摩擦力、阻力）的建模",
+          "exp": 8,
+          "concept": "常见力的建模：重力竖直向下，弹力沿接触面法线，滑动摩擦力大小为 μN、方向与相对运动方向相反，阻力常与速度有关。高中常直接给力，大学要求先判断力的方向和大小，再按矢量列方程。",
+          "question": "质量 m=2kg 的物体在水平地面上（i 水平向右），动摩擦因数 μ=0.2，受水平拉力 F=12i N，取 g=10 m/s²。求运动时摩擦力矢量 f 与加速度 a；若某时刻撤去 F，求之后的加速度 a′。",
+          "answer": "f=−4i N；a=4i m/s²；撤去 F 后 a′=−2i m/s²",
+          "answerSchema": [
+            { "type": "label", "text": "f = " },
+            { "type": "number", "id": "fx", "expected": -4 },
+            { "type": "label", "text": " i (N)" },
+            { "type": "break" },
+            { "type": "label", "text": "a = " },
+            { "type": "number", "id": "ax", "expected": 4 },
+            { "type": "label", "text": " i (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "撤去 F 后 a′ = " },
+            { "type": "number", "id": "ax2", "expected": -2 },
+            { "type": "label", "text": " i (m/s²)" }
+          ],
+          "reviewQuestion": "同一水平地面上（μ=0.2，g=10 m/s²），质量 m=2kg 的物体。若希望物体以 a=5i m/s² 运动，求所需的水平拉力 F。",
+          "reviewAnswer": "F=14i (N)",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "F = " },
+            { "type": "number", "id": "fx", "expected": 14 },
+            { "type": "label", "text": " i (N)" }
+          ]
+        },
+        {
+          "name": "非惯性系与惯性力（平动加速系）",
+          "exp": 10,
+          "concept": "在加速度为 a₀ 的平动非惯性系中，质点除真实力外还要加上惯性力 F*=−ma₀，加上后牛顿定律的形式仍然成立。惯性力没有施力物体，只存在于非惯性系中。",
+          "question": "车厢沿水平方向以 a₀=2i m/s² 加速（i 为运动方向）。车内光滑桌面上放有 m=1kg 的小球，用水平绳拉住使其相对车厢静止。用车厢系分析：绳的张力 T 与小球所受惯性力 F* 各是多少？地面观察者看到的小球加速度是多少？",
+          "answer": "T=2i N；F*=−2i N；地面观察者看到 a=2i m/s²",
+          "answerSchema": [
+            { "type": "label", "text": "T = " },
+            { "type": "number", "id": "tension", "expected": 2 },
+            { "type": "label", "text": " i (N)" },
+            { "type": "break" },
+            { "type": "label", "text": "惯性力 F* = " },
+            { "type": "number", "id": "fstar", "expected": -2 },
+            { "type": "label", "text": " i (N)" },
+            { "type": "break" },
+            { "type": "label", "text": "地面观察者看到 a = " },
+            { "type": "number", "id": "ag", "expected": 2 },
+            { "type": "label", "text": " i (m/s²)" }
+          ],
+          "reviewQuestion": "车厢以 a₀=3i m/s² 加速，车内光滑桌面上小球原来随车厢静止。突然松手后，地面观察者看到小球水平方向的加速度是多少？车厢内观察者看到的小球加速度 a′ 是多少？引起 a′ 的力是什么性质的力？",
+          "reviewAnswer": "地面看到 a=0；a′=−3i m/s²；惯性力",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "地面观察者看到 a = " },
+            { "type": "number", "id": "ag", "expected": 0 },
+            { "type": "label", "text": " i (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "车厢内看到 a′ = " },
+            { "type": "number", "id": "arel", "expected": -3 },
+            { "type": "label", "text": " i (m/s²)" },
+            { "type": "break" },
+            { "type": "label", "text": "引起 a′ 的力是：" },
+            { "type": "choice", "id": "force_type", "options": ["真实力", "惯性力"], "expected": "惯性力" }
+          ]
+        },
+        {
+          "name": "惯性离心力与科里奥利力（概念）",
+          "exp": 6,
+          "concept": "在匀速转动参考系中，相对盘静止的物体受惯性离心力，大小 mω²r、方向沿径向向外；相对盘运动的物体还受科里奥利力 −2mω×v，方向与 ω 和相对速度都垂直。二者都是惯性力，没有真实的施力物体。",
+          "question": "圆盘绕竖直轴以 ω=2 rad/s 匀速转动。质量 m=0.5kg 的小物块相对盘静止，距转轴 r=1m。求盘系中物块所受惯性离心力的大小与方向，并判断它此时是否受科里奥利力。",
+          "answer": "F=2 N，方向沿径向向外；相对盘静止，不受科里奥利力",
+          "answerSchema": [
+            { "type": "label", "text": "惯性离心力 F = " },
+            { "type": "number", "id": "fcent", "expected": 2 },
+            { "type": "label", "text": " N" },
+            { "type": "break" },
+            { "type": "label", "text": "方向：" },
+            { "type": "choice", "id": "dir", "options": ["沿径向向外", "沿径向向内", "沿切向"], "expected": "沿径向向外" },
+            { "type": "break" },
+            { "type": "label", "text": "此时是否受科里奥利力：" },
+            { "type": "choice", "id": "coriolis", "options": ["受", "不受"], "expected": "不受" }
+          ],
+          "reviewQuestion": "同一转盘 ω=2 rad/s。质量 m=0.5kg 的物块相对盘以 v′=1i m/s 沿半径向外运动（i 为该时刻的径向）。求盘系中物块所受科里奥利力的大小，并选择其方向特点。",
+          "reviewAnswer": "F=2 N；方向沿切向（与 ω、v′ 都垂直）",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "科里奥利力 F = " },
+            { "type": "number", "id": "fcor", "expected": 2 },
+            { "type": "label", "text": " N" },
+            { "type": "break" },
+            { "type": "label", "text": "方向特点：" },
+            { "type": "choice", "id": "dir", "options": ["沿半径方向", "沿切向", "沿竖直方向"], "expected": "沿切向" }
+          ]
+        },
+        {
+          "name": "冲量的定义与变力冲量积分计算",
+          "exp": 8,
+          "concept": "冲量定义为 I=∫F dt，是力对时间的累积效应，也是矢量，要按分量积分。高中只处理恒力 I=FΔt，大学遇到变力时必须回到积分。",
+          "question": "一质点受合力 F(t)=(6t+4)i+8j（N，SI）。求 0 到 2s 时间内合力的冲量 I。",
+          "answer": "I=20i+16j (N·s)",
+          "answerSchema": [
+            { "type": "label", "text": "I = " },
+            { "type": "number", "id": "ix", "expected": 20 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "iy", "expected": 16 },
+            { "type": "label", "text": " j (N·s)" }
+          ],
+          "reviewQuestion": "某过程中质点所受冲量为 I=30i−12j (N·s)，持续时间为 3s。求这段时间内的平均合力 F̄。",
+          "reviewAnswer": "F̄=10i−4j (N)",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "平均合力 F̄ = " },
+            { "type": "number", "id": "fx", "expected": 10 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "fy", "expected": -4 },
+            { "type": "label", "text": " j (N)" }
+          ]
+        },
+        {
+          "name": "动量定理（微分与积分形式）",
+          "exp": 8,
+          "concept": "动量定理的微分形式是 dp/dt=F，积分形式是 Δp=∫F dt=I，即合外力的冲量等于动量增量。高中常用 mΔv=FΔt 的恒力特例，大学要按矢量分量处理变力过程。",
+          "question": "质量 m=2kg 的质点初速度 v₀=1i+2j (m/s)，受到合力冲量 I=8i−6j (N·s)。求末速度 v。",
+          "answer": "v=5i−1j (m/s)",
+          "answerSchema": [
+            { "type": "label", "text": "v = " },
+            { "type": "number", "id": "vx", "expected": 5 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "vy", "expected": -1 },
+            { "type": "label", "text": " j (m/s)" }
+          ],
+          "reviewQuestion": "质量 m=2kg 的质点，速度在 2s 内由 3i−4j 变为 −1i+2j (m/s)。求这段时间内的平均合力 F̄。",
+          "reviewAnswer": "F̄=−4i+6j (N)",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "平均合力 F̄ = " },
+            { "type": "number", "id": "fx", "expected": -4 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "fy", "expected": 6 },
+            { "type": "label", "text": " j (N)" }
+          ]
+        },
+        {
+          "name": "变力做功的线积分计算",
+          "exp": 10,
+          "concept": "功定义为力沿路径的线积分 W=∫F·dr。高中只算恒力沿直线做功，大学要先把路径写成参数方程，再把点积展开成对时间的积分。",
+          "question": "力 F=(4x)i+2j（N，x 的单位为 m）。质点沿路径 r(t)=ti+2tj（m）从 t=0 运动到 t=2s，求力所做的功 W。",
+          "answer": "W=16 J",
+          "answerSchema": [
+            { "type": "label", "text": "W = " },
+            { "type": "number", "id": "work", "expected": 16 },
+            { "type": "label", "text": " J" }
+          ],
+          "reviewQuestion": "力 F=(2x)i+4j（N）作用于质点。质点先沿 x 轴从 (0,0) 到 (3,0)，再沿竖直线从 (3,0) 到 (3,2)（单位 m）。求力在这段折线路径上做的总功 W。",
+          "reviewAnswer": "W=17 J",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "W = " },
+            { "type": "number", "id": "work", "expected": 17 },
+            { "type": "label", "text": " J" }
+          ]
+        },
+        {
+          "name": "动能定理（积分形式，力与路径相关）",
+          "exp": 8,
+          "concept": "动能定理 W=ΔK=½mv²−½mv₀² 对变力和曲线路径都成立，是标量关系。高中只处理直线恒力情形，大学中做功常需积分求出后再反解速度。",
+          "question": "质量 m=2kg 的质点初速度 v₀=3 m/s，合力对它做功 W=55 J。求末速率 v。",
+          "answer": "v=8 m/s",
+          "answerSchema": [
+            { "type": "label", "text": "v = " },
+            { "type": "number", "id": "v", "expected": 8 },
+            { "type": "label", "text": " m/s" }
+          ],
+          "reviewQuestion": "质量 m=2kg 的物体以 v₀=10 m/s 在粗糙水平面上滑行，滑行 25m 后停下。用动能定理求它所受平均阻力的大小 f。",
+          "reviewAnswer": "f=4 N",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "f = " },
+            { "type": "number", "id": "friction", "expected": 4 },
+            { "type": "label", "text": " N" }
+          ]
+        },
+        {
+          "name": "力矩的定义（矢量叉积）",
+          "exp": 8,
+          "concept": "力矩定义为 M=r×F，是矢量，大小 M=rF sinθ，方向由右手定则决定。高中只用杠杆的标量“力×力臂”，大学必须用叉积描述力对点或对轴的转动效果。",
+          "question": "力 F=3j+4k（N）作用在位置矢量 r=2i（m）处（i、j、k 为直角坐标单位矢量）。求该力对原点的力矩 M。",
+          "answer": "M=−8j+6k (N·m)",
+          "answerSchema": [
+            { "type": "label", "text": "M = " },
+            { "type": "number", "id": "mx", "expected": 0 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "my", "expected": -8 },
+            { "type": "label", "text": " j + " },
+            { "type": "number", "id": "mz", "expected": 6 },
+            { "type": "label", "text": " k (N·m)" }
+          ],
+          "reviewQuestion": "力 F=Fj（N）作用在 r=4i（m）处，测得该力对原点的力矩为 M=12k (N·m)。求力的大小 F。",
+          "reviewAnswer": "F=3 N",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "F = " },
+            { "type": "number", "id": "force", "expected": 3 },
+            { "type": "label", "text": " N" }
+          ]
+        },
+        {
+          "name": "角动量的定义（对点、对轴）",
+          "exp": 8,
+          "concept": "角动量定义为 L=r×p=m(r×v)，是矢量，大小 mrv sinθ，方向由右手定则决定；它依赖于参考点（或参考轴）的选取。高中不讲角动量，大学用叉积统一描述转动状态。",
+          "question": "质量 m=2kg 的质点位于 r=3i（m）处，速度 v=2j (m/s)。求它对原点的角动量 L（i、j、k 组成右手直角系）。",
+          "answer": "L=12k (kg·m²/s)",
+          "answerSchema": [
+            { "type": "label", "text": "L = " },
+            { "type": "number", "id": "lx", "expected": 0 },
+            { "type": "label", "text": " i + " },
+            { "type": "number", "id": "ly", "expected": 0 },
+            { "type": "label", "text": " j + " },
+            { "type": "number", "id": "lz", "expected": 12 },
+            { "type": "label", "text": " k (kg·m²/s)" }
+          ],
+          "reviewQuestion": "质量 m=2kg 的质点位于 r=4i（m）处，速度沿 +j 方向，测得它对原点的角动量为 L=24k (kg·m²/s)。求速度大小 v。",
+          "reviewAnswer": "v=3 m/s（沿 +j）",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "v = " },
+            { "type": "number", "id": "v", "expected": 3 },
+            { "type": "label", "text": " m/s（沿 +j）" }
+          ]
+        },
+        {
+          "name": "角动量定理（微分形式）",
+          "exp": 10,
+          "concept": "角动量定理的微分形式是 M=dL/dt，即合外力对某点的力矩等于角动量对该点的时间变化率。高中没有这套语言，大学用它对转动过程做微分与积分分析。",
+          "question": "一质点对原点的角动量为 L(t)=(2t²+3)k（SI，k 沿 z 轴）。求 t=2s 时合外力对原点的力矩 M。",
+          "answer": "M=8k (N·m)",
+          "answerSchema": [
+            { "type": "label", "text": "M = " },
+            { "type": "number", "id": "torque", "expected": 8 },
+            { "type": "label", "text": " k (N·m)" }
+          ],
+          "reviewQuestion": "一质点对某固定点的角动量在 2s 内由 L₁=4k 变为 L₂=16k（SI）。求这段时间内合外力对该点的平均力矩 M̄。",
+          "reviewAnswer": "M̄=6k (N·m)",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "M̄ = " },
+            { "type": "number", "id": "torque", "expected": 6 },
+            { "type": "label", "text": " k (N·m)" }
+          ]
+        },
+        {
+          "name": "角动量守恒定律及其应用",
+          "exp": 10,
+          "concept": "当合外力对某固定点的力矩为零时，质点对该点的角动量守恒。对绕固定点运动的质点，守恒式常表现为 m r₁v₁=m r₂v₂，半径变小则速率变大。",
+          "question": "质量 m=0.5kg 的小球在光滑水平面上绕固定点做圆周运动，通过细绳连接。初始 r₁=2m、v₁=6 m/s；拉绳使半径变为 r₂=1m。求此时速率 v₂。",
+          "answer": "v₂=12 m/s",
+          "answerSchema": [
+            { "type": "label", "text": "v₂ = " },
+            { "type": "number", "id": "v2", "expected": 12 },
+            { "type": "label", "text": " m/s" }
+          ],
+          "reviewQuestion": "同上的小球装置：初始 r₁=2m、v₁=6 m/s。若拉绳后测得速率为 12 m/s，求此时的半径 r₂。",
+          "reviewAnswer": "r₂=1 m",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "r₂ = " },
+            { "type": "number", "id": "r2", "expected": 1 },
+            { "type": "label", "text": " m" }
+          ]
+        },
+        {
+          "name": "开普勒第二定律（角动量守恒证明）",
+          "exp": 8,
+          "concept": "行星受的万有引力始终指向太阳，对太阳的力矩为零，因此对太阳的角动量守恒；由此可证单位时间扫过的面积恒定。近日点距太阳近，速率大；远日点速率小。",
+          "conceptFigure": "content/images/kepler-area-01.jpg",
+          "question": "一颗彗星绕太阳做椭圆运动。近日距 r_p=1×10¹¹m 处速率 v_p=5×10⁴ m/s，远日距 r_a=5×10¹¹m。由角动量守恒求远日点速率 v_a。",
+          "answer": "v_a=1×10⁴ m/s",
+          "answerSchema": [
+            { "type": "label", "text": "v_a = " },
+            { "type": "number", "id": "va", "expected": 10000 },
+            { "type": "label", "text": " m/s" }
+          ],
+          "reviewQuestion": "某行星椭圆轨道远日距是近日距的 4 倍。求远日点速率与近日点速率之比 v_a/v_p（填小数）。",
+          "reviewAnswer": "v_a/v_p=0.25",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "v_a / v_p = " },
+            { "type": "number", "id": "ratio", "expected": 0.25 },
+            { "type": "label", "text": "" }
+          ]
+        },
+        {
+          "name": "开普勒第一、第三定律与万有引力",
+          "exp": 8,
+          "concept": "开普勒第一定律说行星轨道是太阳位于一个焦点的椭圆；第三定律说同一中心天体下 T²/a³ 为常数。对圆轨道，由万有引力提供向心力可推出 T²∝r³。",
+          "question": "某恒星有两颗沿圆轨道运行的行星，轨道半径之比 r₂/r₁=4。求它们的公转周期之比 T₂/T₁。",
+          "answer": "T₂/T₁=8",
+          "answerSchema": [
+            { "type": "label", "text": "T₂ / T₁ = " },
+            { "type": "number", "id": "tratio", "expected": 8 },
+            { "type": "label", "text": "" }
+          ],
+          "reviewQuestion": "另一恒星系统中，两颗圆轨道行星的公转周期之比 T₂/T₁=27。求轨道半径之比 r₂/r₁。",
+          "reviewAnswer": "r₂/r₁=9",
+          "reviewAnswerSchema": [
+            { "type": "label", "text": "r₂ / r₁ = " },
+            { "type": "number", "id": "rratio", "expected": 9 },
+            { "type": "label", "text": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}
