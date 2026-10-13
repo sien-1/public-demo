@@ -303,11 +303,10 @@ body {
 }
 
 .pack-hero {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 28px 28px 6px;
+  gap: 14px;
+  padding: 24px 28px 8px;
   background: linear-gradient(140deg, #eaf2f9 0%, #ffffff 65%);
 }
 
@@ -330,10 +329,16 @@ body {
   margin: 0;
 }
 
-.pack-hero-art {
+.pack-banner {
+  display: block;
   width: 100%;
-  max-width: 340px;
-  justify-self: end;
+  max-width: calc(100% - 56px);
+  margin: 10px auto 0;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
 }
 
 #pack-list {
@@ -394,13 +399,15 @@ body {
   }
 
   .pack-hero {
-    grid-template-columns: 1fr;
-    padding: 22px 18px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 18px 4px;
   }
 
-  .pack-hero-art {
-    max-width: 100%;
-    justify-self: center;
+  .pack-banner {
+    max-width: calc(100% - 36px);
+    aspect-ratio: 4 / 3;
+    object-position: center 42%;
   }
 
   #pack-list {
