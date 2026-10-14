@@ -15,6 +15,7 @@
     let bonusExp = 0;               // 进阶挑战额外经验
     let completedChallenges = new Set(); // 已完成的进阶挑战 key
     let currentChallengeKey = null; // 当前打开的进阶挑战 key
+    let modalHistoryOpen = false;   // 是否有弹窗占用了一条浏览器历史记录
     let deckMode = false;           // 是否处于“刷卡学习”模式
     let deckItems = [];             // 当前刷卡队列
     let deckIndex = 0;              // 当前刷卡位置
@@ -395,6 +396,39 @@
     }
 
     // ===== 详情弹窗的两个步骤 =====
+    function registerModalHistory() {
+      if (modalHistoryOpen) return;
+      try {
+        history.pushState({ modal: true }, "");
+        modalHistoryOpen = true;
+      } catch (error) {
+        // 某些浏览器不支持时忽略，不影响正常使用
+      }
+    }
+
+    function consumeModalHistory() {
+      if (!modalHistoryOpen) return;
+      modalHistoryOpen = false;
+      try {
+        history.back();
+      } catch (error) {
+        // 忽略
+      }
+    }
+
+    // 手机返回手势：先关闭弹窗，而不是退出网页
+    window.addEventListener("popstate", () => {
+      if (!modalHistoryOpen) return;
+      modalHistoryOpen = false;
+      document.getElementById("detail-overlay").classList.add("hidden");
+      document.getElementById("review-overlay").classList.add("hidden");
+      currentSkill = null;
+      currentChallengeKey = null;
+      deckMode = false;
+      deckItems = [];
+      deckIndex = 0;
+    });
+
     function renderDetailSections(skill) {
       const container = document.getElementById("detail-sections");
       container.innerHTML = "";
@@ -548,12 +582,15 @@
         document.getElementById("quiz-done-btn").textContent = "完成";
       }
       document.getElementById("detail-overlay").classList.remove("hidden");
+      registerModalHistory();
     }
 
     function hideDetail() {
+      const wasOpen = !document.getElementById("detail-overlay").classList.contains("hidden");
       document.getElementById("detail-overlay").classList.add("hidden");
       currentSkill = null;
       currentChallengeKey = null;
+      if (wasOpen) consumeModalHistory();
     }
 
     function showQuizStep() {
@@ -945,6 +982,7 @@
       document.getElementById("review-submit-btn").classList.remove("hidden");
       document.getElementById("review-skip-btn").classList.remove("hidden");
       document.getElementById("review-overlay").classList.remove("hidden");
+      registerModalHistory();
       if (!useReviewBuilder) {
         document.getElementById("review-input").focus();
       }
@@ -952,7 +990,9 @@
     }
 
     function closeReview() {
+      const wasOpen = !document.getElementById("review-overlay").classList.contains("hidden");
       document.getElementById("review-overlay").classList.add("hidden");
+      if (wasOpen) consumeModalHistory();
     }
 
     // 检查一组碎片答案：空格数、未选的符号组数、整体是否正确
@@ -1116,6 +1156,7 @@
     });
     document.getElementById("reset-btn").addEventListener("click", resetProgress);
     document.getElementById("switch-pack-btn").addEventListener("click", showPackPicker);
+    document.getElementById("mobile-back-btn").addEventListener("click", showPackPicker);
 
     document.getElementById("deck-prev-btn").addEventListener("click", () => deckGo(-1));
     document.getElementById("deck-next-btn").addEventListener("click", () => deckGo(1));

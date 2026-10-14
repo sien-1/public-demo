@@ -292,6 +292,9 @@ body {
 
 #pack-screen {
   background: linear-gradient(160deg, #eef4fa 0%, #f9fbfd 100%);
+  overflow-y: auto;
+  align-items: flex-start;
+  padding: 20px 12px calc(40px + env(safe-area-inset-bottom, 0px));
 }
 
 .pack-box {
@@ -331,12 +334,10 @@ body {
 
 .pack-banner {
   display: block;
-  width: 100%;
-  max-width: calc(100% - 56px);
+  width: calc(100% - 56px);
+  max-width: 724px;
+  height: auto;
   margin: 10px auto 0;
-  aspect-ratio: 2.3 / 1;
-  object-fit: cover;
-  object-position: center;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
 }
@@ -388,6 +389,16 @@ body {
   border-radius: 18px;
 }
 
+.deck-header {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 10px rgba(22, 50, 79, 0.08);
+}
+
+.mobile-back-btn {
+  display: none;
+}
+
 .primary-btn:hover {
   background: #274c6d;
 }
@@ -405,9 +416,9 @@ body {
   }
 
   .pack-banner {
-    max-width: calc(100% - 36px);
-    aspect-ratio: 4 / 3;
-    object-position: center 42%;
+    width: calc(100% - 28px);
+    max-width: 100%;
+    height: auto;
   }
 
   #pack-list {
@@ -429,6 +440,25 @@ body {
   .keypad {
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+  }
+
+  #concept-figure,
+  #question-figure {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .mobile-back-btn {
+    display: block;
+    width: 100%;
+    margin: 4px 0 12px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #ffffff;
+    color: var(--blue);
+    font-size: 14px;
+    cursor: pointer;
   }
 }
     .detail-box {
