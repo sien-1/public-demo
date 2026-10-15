@@ -7,6 +7,12 @@
       "file": "content/medai.json"
     },
     {
+      "id": "literature",
+      "name": "文献卡片库",
+      "description": "自己提炼的文献笔记：研究问题、方法、数据、发现、局限与启发",
+      "file": "content/literature.json"
+    },
+    {
       "id": "physics",
       "name": "大学物理·力学",
       "description": "质点运动学与运动定理：27 个技能卡与复习题",

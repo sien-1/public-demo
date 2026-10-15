@@ -181,6 +181,16 @@
       return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 
+    function skillText(skill) {
+      const parts = [skill.name, skill.concept, skill.question];
+      (skill.sections || []).forEach(section => {
+        if (section.heading) parts.push(section.heading);
+        if (section.body) parts.push(section.body);
+        if (Array.isArray(section.points)) parts.push(section.points.join(" "));
+      });
+      return parts.join(" ");
+    }
+
     // 搜索结果里：把“命中关键词”的原文片段加到卡片下方，并高亮
     function appendSnippetToCard(card, skill, keyword) {
       let source = null;
@@ -189,6 +199,8 @@
         source = skill.concept;
       } else if (skill.question.toLowerCase().includes(keyword)) {
         source = skill.question;
+      } else if (skillText(skill).toLowerCase().includes(keyword)) {
+        source = skillText(skill);
       } else {
         return;
       }
@@ -259,12 +271,14 @@
       const name = skill.name.toLowerCase();
       const question = skill.question.toLowerCase();
       const concept = skill.concept.toLowerCase();
+      const sections = skillText(skill).toLowerCase();
 
       let score = 0;
       if (name === keyword) score += 100;
       else if (name.includes(keyword)) score += 50;
       if (question.includes(keyword)) score += 10;
       if (concept.includes(keyword)) score += 1;
+      if (sections.includes(keyword)) score += 1;
       return score;
     }
 

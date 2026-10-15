@@ -39,6 +39,7 @@ public-demo/
 ├─ content/
 │  ├─ index.json
 │  ├─ medai.json        # 医学人工智能（5 模块 / 15 概念）
+│  ├─ literature.json   # 文献卡片库
 │  ├─ physics.json      # 大学物理·力学
 │  ├─ physchem.json     # 物理化学·上册
 │  ├─ probability.json  # 概率统计
